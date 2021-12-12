@@ -8,13 +8,13 @@ export const publicRoutes = [
     element: <RandomDish />,
     children: [],
     icon: <PostAddSharp fontSize="large" />,
-    label: "New Dishes",
+    label: "Recepies",
   },
   {
     path: "/favourite",
     element: <Favourite />,
     children: [],
     icon: <FavoriteBorderOutlined fontSize="large" />,
-    label: "Favourite Dishes",
+    label: "Favourite ",
   },
 ];
