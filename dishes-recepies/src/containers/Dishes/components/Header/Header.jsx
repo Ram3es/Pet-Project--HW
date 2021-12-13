@@ -14,7 +14,7 @@ const Header = ({ open, setOpen }) => {
   const [headerTitle, setTitle] = useState("");
 
   useEffect(() => {
-    const activeRoute = publicRoutes.find((route) => route.path === pathname || route.path.includes(pathname));
+    const activeRoute = publicRoutes.find((route) => route.path === pathname );
 
     if (activeRoute) setTitle(activeRoute.label);
   }, [pathname]);
@@ -35,9 +35,6 @@ const Header = ({ open, setOpen }) => {
         <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
           {headerTitle ? headerTitle : ""}
         </Typography>
-        <Button size="small" variant="contained" color="default" onClick={() => {}}>
-          Log Out
-        </Button>
       </Toolbar>
     </AppBar>
   );

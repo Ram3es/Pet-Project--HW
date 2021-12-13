@@ -9,8 +9,12 @@ export default makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     height: "100vh",
-    overflowY: "auto",
+    overflowY: "hidden",
     overflowX: "hidden",
   },
-  appBarSpacer: theme.mixins.toolbar,
+  appBarSpacer: {
+    width: "100%",
+    height: "40px",
+  },
 }));
+// theme.mixins.toolbar
