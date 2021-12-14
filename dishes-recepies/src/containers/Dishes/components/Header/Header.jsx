@@ -14,9 +14,9 @@ const Header = ({ open, setOpen }) => {
   const [headerTitle, setTitle] = useState("");
 
   useEffect(() => {
-    const activeRoute = publicRoutes.find((route) => route.path === pathname );
+    const activeRoute = publicRoutes.find((route) => route.path === pathname);
+    activeRoute && setTitle(activeRoute.label)
 
-    if (activeRoute) setTitle(activeRoute.label);
   }, [pathname]);
 
   return (

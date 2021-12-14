@@ -1,26 +1,25 @@
+import { useState, useEffect } from "react";
 import { ModalForm } from "../ModalForm";
 import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@material-ui/core";
-import { useState } from "react";
-import { useEffect } from "react";
 import "./index.scss";
+
 const Favourite = () => {
-  const [dishes, setDishes] = useState([]);
+  const [dishes, setDishes] = useState(JSON.parse(localStorage.getItem("data")) || []);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
   useEffect(() => {
-    const dishes = JSON.parse(localStorage.getItem("data")) || [];
-    setDishes(dishes);
-  }, []);
+    localStorage.setItem("data", JSON.stringify(dishes));
+  }, [dishes]);
 
   const handleRemove = (id) => {
-    const cutDishesesList = dishes.filter((item) => item.idMeal !== id);
-    localStorage.setItem("data", JSON.stringify(cutDishesesList));
-    setDishes(cutDishesesList);
+    const filteredList = dishes.filter((item) => item.idMeal !== id);
+    setDishes(filteredList);
   };
 
   return (
     <>
       <div className="btn">
-        <Button variant="contained" color="primary">
+        <Button variant="contained" color="primary" onClick={() => setIsOpenModal(true)}>
           Add Your Best
         </Button>
       </div>
@@ -48,7 +47,7 @@ const Favourite = () => {
             </div>
           ))}
       </div>
-      <ModalForm />
+      <ModalForm showModal={setIsOpenModal} isOpenModal={isOpenModal} addDish={setDishes} />
     </>
   );
 };
