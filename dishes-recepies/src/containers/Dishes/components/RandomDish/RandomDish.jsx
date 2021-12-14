@@ -9,8 +9,6 @@ const RandomDish = () => {
 
   const fetchRecepies = async () => {
     const { data } = await fetchMeal();
-    console.log(data.meals[0]);
-
     setValue(data.meals[0]);
   };
   useEffect(() => {

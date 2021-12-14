@@ -4,9 +4,35 @@
     background-color: white;
     border-radius: 15px;
     margin-left: 50px;
+    
 }
 .textarea {
-    min-width: 100px;
-    min-height: 50px;
+    width: 90%;
+    margin-left: 15px;
+    height: 250px;
     resize: none;
+    border-radius: 10px;
+    border:2px solid blue;
+    font-size: larger;
+    padding-left: 10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
 }
+.input {
+ 
+    margin:30px 15px;
+    width: 90%;
+    height: 40px;
+    padding-left: 10px;
+    border-radius: 10px;
+    font-size:large;
+    border: 2px solid blue;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+
+    ;
+
+}
+// .input:focus{
+//     border:2px solid rgb(8, 8, 110) ;
+// }
