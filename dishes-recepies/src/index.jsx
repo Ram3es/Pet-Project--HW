@@ -4,11 +4,17 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./styles/index.scss";
+import dotenv from 'dotenv' 
+import { GoogleOAuthProvider} from '@react-oauth/google'
+dotenv.config()
+
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
       <App />
+      </GoogleOAuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root"),
